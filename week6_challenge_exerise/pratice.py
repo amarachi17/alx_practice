@@ -17,27 +17,41 @@
 # print(f"{dog2.name} is a {dog2.breed}. He says: {dog2.bark()}")
 
 
-class Animal:
-    def __init__(self, name):
-        self.name = name
+# class Animal:
+#     def __init__(self, name):
+#         self.name = name
         
-    def speak(self):
-        pass
+#     def speak(self):
+#         pass
     
-# Inheritance
-class Lion(Animal):
-   def speak(self):
-       return f"{self.name} the Lion roars"
-class Elephant(Animal):
-    def speak(self):
-        return f"{self.name} the Elephant trumpets"
+# # Inheritance
+# class Lion(Animal):
+#    def speak(self):
+#        return f"{self.name} the Lion roars"
+# class Elephant(Animal):
+#     def speak(self):
+#         return f"{self.name} the Elephant trumpets"
     
-# Polymorphism
+# # Polymorphism
 
-zoo =[
-    Lion("Simba"),
-    Elephant("Dumbo")
-]
+# zoo =[
+#     Lion("Simba"),
+#     Elephant("Dumbo")
+# ]
 
-for animal in zoo:
-    print(animal.speak())
+# for animal in zoo:
+#     print(animal.speak())
+
+try:
+    f = open('text.txt')
+    if f.name == 'text.txt':
+        raise Exception
+except FileNotFoundError as e:
+    print(e)
+except Exception as e:
+    print('Error!')
+else:
+    print(f.read())
+    f.close()
+finally:
+    print('Executing Finally.....')
